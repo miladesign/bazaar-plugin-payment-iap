@@ -1,4 +1,4 @@
-package jp.wizcorp.phonegap.plugin.wizPurchase;
+package ir.bazaar.miladesign;
 
 //
 import org.apache.cordova.CordovaPlugin;
@@ -11,6 +11,7 @@ import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
 import android.app.Activity;
 import android.util.Log;
+
 //Android Includes
 import android.content.Intent;
 
