@@ -1,10 +1,9 @@
-
 module.exports = {
-
-//miladesign start
+	// SetUp IAP
 	setUp: function(androidApplicationLicenseKey) {
 		cordova.exec(
 			function (result) {
+				console.log("Initialize Success");
 			}, 
 			function (error) {
 			},
@@ -13,39 +12,38 @@ module.exports = {
 			[androidApplicationLicenseKey]
 		); 
 	},
-//miladesign end	
+	
+	// requestStoreListing
 	requestStoreListing: function (productIds, successCallback, failureCallback) {
 		if (!productIds || productIds.length == 0) {
 			return successCallback({});
 		}
 		if (Object.prototype.toString.call(productIds) === '[object String]') {
-			// In the event one productId is passed in as String we shall put it in
-			// an array to be easily dealt with natively.
 			productIds = [ productIds ];
 		}
 		cordova.exec(successCallback, failureCallback, "IAP", "requestStoreListing", [ productIds ]);	
 	},
-
+	
+	// purchaseProduct
 	purchaseProduct: function(productId, successCallback, failureCallback) {
 		if (!productId) {
 			return failureCallback("noProductId");
 		}
 		cordova.exec(successCallback, failureCallback, "IAP", "purchaseProduct", [ productId ]);		
 	},	
-
+	
+	// consumeProduct
 	consumeProduct: function (receipt, successCallback, failureCallback) {
 		if (!receipt || receipt.length == 0) {
 			return successCallback();
 		}
 		if (Object.prototype.toString.call(receipt) === '[object String]') {
-			// In the event one receipt is passed in as String we shall put it in
-			// an array to be easily dealt with natively.
 			receipt = [ receipt ];
 		}
-	   
 		cordova.exec(successCallback, failureCallback, "IAP", "consumeProduct", [ receipt ]);
 	},	
-
+	
+	// restorePurchases
 	restorePurchases: function (successCallback, failureCallback) {
 		cordova.exec(successCallback, failureCallback, "IAP", "restorePurchases", []);
 	}

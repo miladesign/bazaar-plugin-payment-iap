@@ -1,6 +1,6 @@
 {
   "name": "bazaar-plugin-payment-iap",
-  "version": "1.0.0",
+  "version": "1.2",
   "description": "Bazaar IAP plugin",
   "cordova": {
     "id": "bazaar-plugin-payment-iap",

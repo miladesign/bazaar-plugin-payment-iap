@@ -2,13 +2,13 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="bazaar-plugin-payment-iap"
-    version="1.0.0">
+    version="1.2">
 
 	<name>Bazaar IAP plugin</name>
     <description>Bazaar IAP plugin</description>
-    <author>Milad Mohammadi</author>		
+    <author>Milad Mohammadi Rezagah</author>		
     <license>MIT</license>
-    <keywords>Bazaar,plugin,payment,IAP</keywords>
+    <keywords>cordova,plugin,payment,IAP</keywords>
     <repo>https://github.com/miladesign/bazaar-plugin-payment-iap</repo>
     <issue>https://github.com/miladesign/bazaar-plugin-payment-iap/issues</issue>
 	<engines>
@@ -31,8 +31,7 @@
 			<uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR" />
         </config-file>		
 		
-		<source-file src="src/android/IAP.java" target-dir="src/ir.bazaar.miladesign"/>
-		<source-file src="src/android/MdBazaar.jar" target-dir="libs" />
+	    <source-file src="src/android/BazaarIAP.jar" target-dir="libs"/>
     </platform>
-	
+
 </plugin>
